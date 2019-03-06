@@ -1,6 +1,7 @@
 body {
     font-family: "Courier New";
     font-size: 16px;
+    background: #212121;
 }
 
 #sidebar {
@@ -25,6 +26,7 @@ body {
 #content {
     float: left;
     padding: 20px 0px;
+    color: white;
 }
 
 #content label {
@@ -157,14 +159,14 @@ body {
 }
 
 #content .datatable tr {
-    background-color: #DBDBDB;
+    background-color: #424242;
 }
 
 #content .datatable .embedded {
-    background-color: white;
-    text-align: left;
     border: none;
+    text-align: left;
     padding-left: 0px;
+    background: #212121;
 }
 
 #content .datatable .embedded h2 {
@@ -172,8 +174,14 @@ body {
     pading: 0px;
 }
 
+#content .datatable .statblock {
+    line-height: 70%;
+    color: black;
+    background-color: #AAAAAA;
+}
+
 #content .datatable .green {
-    background-color: #7DF779
+    background-color: #9DF779
 }
 
 #content .datatable .yellow {
@@ -181,11 +189,7 @@ body {
 }
 
 #content .datatable .red {
-    background-color: #FAA5A5
-}
-
-#content .datatable .statblock {
-    line-height: 70%;
+    background-color: #FA8E8E
 }
 
 #content #results {
@@ -221,7 +225,7 @@ body {
     display: inline-block;
     padding: 8px 0px;
     width: 5%;
-    background-color: #DBDBDB;
+    background-color: #424242;
 }
 
 #content .page:hover {
@@ -238,5 +242,5 @@ body {
 
 a:link, a:visited, a:hover, a:active {
     text-decoration: none;
-    color: blue;
+    color: white;
 }
