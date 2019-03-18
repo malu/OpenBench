@@ -1,11 +1,11 @@
-FRAMEWORK_REPO_URL = 'http://github.com/AndyGrant/OpenBench/'
+FRAMEWORK_REPO_URL = 'http://github.com/malu/OpenBench/'
 
 FRAMEWORK_DEFAULTS = {
 
     'config' : {
 
         # Framework source, must be changed for your instance
-        'framework'   : 'http://github.com/AndyGrant/OpenBench/',
+        'framework'   : 'http://github.com/malu/OpenBench/',
 
         # Default to uci since everyone uses it
         'protocol'    : 'uci',
@@ -50,11 +50,18 @@ FRAMEWORK_DEFAULTS = {
         # take a few bench runs for the latest version of the new engine.
         # Scale your NPS to match Ethereal's NPS of 1,750,000
         'engines'     : {
+            'Asymptote': {
+                'name'    : 'Asymptote',
+                'source'  : 'https://github.com/malu/asymptote',
+                'nps'     : 900000,
+                'default' : True,
+            },
+
             'Ethereal' : {
                 'name'    : 'Ethereal',
                 'source'  : 'https://github.com/AndyGrant/Ethereal',
                 'nps'     : 1500000,
-                'default' : True,
+                'default' : False,
             },
 
             'Laser' : {
