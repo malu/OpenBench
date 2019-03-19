@@ -101,19 +101,19 @@ def getEngine(data):
 
     # Build Engine using provided gcc and PGO flags
     subprocess.Popen(
-        ['make', 'EXE={0}'.format(exe)],
-        cwd='tmp/{0}/src/'.format(unzipname)).wait()
+        ['cargo', 'build', '--release'],
+        cwd='tmp/{0}/'.format(unzipname)).wait()
 
     # Create the Engines directory if it does not exist
     if not os.path.isdir('Engines'):
         os.mkdir('Engines')
 
     # Move the compiled engine
-    if os.path.isfile('tmp/{0}/src/{1}'.format(unzipname, exe)):
-        os.rename('tmp/{0}/src/{1}'.format(unzipname, exe), 'Engines/{0}'.format(exe))
+    if os.path.isfile('tmp/{0}/target/release/asymptote.exe'.format(unzipname)):
+        os.rename('tmp/{0}/target/release/asymptote.exe'.format(unzipname), 'Engines/{0}'.format(exe))
 
-    elif os.path.isfile('tmp/{0}/src/{1}'.format(unzipname, name)):
-        os.rename('tmp/{0}/src/{1}'.format(unzipname, name), 'Engines/{0}'.format(exe))
+    elif os.path.isfile('tmp/{0}/target/release/asymptote'.format(unzipname)):
+        os.rename('tmp/{0}/target/release/asymptote'.format(unzipname), 'Engines/{0}'.format(exe))
 
     # Cleanup the unzipped zip file
     shutil.rmtree('tmp')
@@ -216,7 +216,7 @@ def singleCoreBench(name, outqueue):
         data = data.decode('ascii').strip().split('\n')
 
         # Parse and dump results into queue
-        bench = int(data[-2].split(':')[1])
+        bench = int(data[-3].split(':')[1])
         nps   = int(data[-1].split(':')[1])
         outqueue.put((bench, nps))
 
