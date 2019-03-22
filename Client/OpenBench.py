@@ -100,9 +100,12 @@ def getEngine(data):
     os.remove(name + '.zip')
 
     # Build Engine using provided gcc and PGO flags
+    env = os.environ.copy();
+    env['RUSTFLAGS'] = '-C target-cpu=native'
     subprocess.Popen(
         ['cargo', 'build', '--release'],
-        cwd='tmp/{0}/'.format(unzipname)).wait()
+        cwd='tmp/{0}/'.format(unzipname),
+        env=env).wait()
 
     # Create the Engines directory if it does not exist
     if not os.path.isdir('Engines'):
