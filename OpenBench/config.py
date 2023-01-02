@@ -57,17 +57,10 @@ FRAMEWORK_DEFAULTS = {
                 'default' : True,
             },
 
-            'Ethereal' : {
-                'name'    : 'Ethereal',
-                'source'  : 'https://github.com/AndyGrant/Ethereal',
-                'nps'     : 1500000,
-                'default' : False,
-            },
-
-            'Laser' : {
-                'name'    : 'Laser',
-                'source'  : 'https://github.com/jeffreyan11/uci-chess-engine',
-                'nps'     : 625000,
+            'Asymptote 2': {
+                'name'    : 'Asymptote 2',
+                'source'  : 'https://github.com/malu/asymptote2',
+                'nps'     : 3000000,
                 'default' : False,
             },
         },
